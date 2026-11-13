@@ -4,7 +4,7 @@ Colo-3D 是一个用 Unity 6 开发的 3D 工厂建造原型。主要开发时�
 
 **我的分工**　Scribe 存档框架由我独立设计并实现。区块法线和网格绘制是我在原型中写的功能。原型的其他部分（工厂物流、电力、世界地图等）有编程 Agent 参与开发，没有收录。整理这个仓库时，地形模块的抽取、全部测试、对比图工具和下文提到的一处修正，都由编程 Agent 协作完成。
 
-[Scribe 源码](Assets/Scripts/Scribe) · [区块法线](Assets/Scripts/Terrain/ChunkNormals.cs) · [网格绘制](Assets/Scripts/GridUI) · [测试](Assets/Editor/Test)
+[演示视频（3 分 15 秒）](https://github.com/DaliBerr/Colo-Portfolio/releases/tag/demo-video) · [Scribe 源码](Assets/Scripts/Scribe) · [区块法线](Assets/Scripts/Terrain/ChunkNormals.cs) · [网格绘制](Assets/Scripts/GridUI) · [测试](Assets/Editor/Test)
 
 ## Scribe：按字段读写的存档框架
 
@@ -82,3 +82,5 @@ dotnet run --project Tools/SeamFigure -- Docs/chunk-seam.png
 | `Tools/SeamFigure` | 生成接缝对比图 |
 
 原型演示视频里使用的建筑模型来自 Kenney（CC0），不包含在这个仓库中。
+
+另一个作品：[《苍灵志》技术作品集](https://github.com/DaliBerr/Lilith-Portfolio)，Unity 6 2D 动作构筑游戏中的法术图校验、通用 UI/事件/存档模块和战斗卡顿排查。
