@@ -83,4 +83,4 @@ dotnet run --project Tools/SeamFigure -- Docs/chunk-seam.png
 
 原型演示视频里使用的建筑模型来自 Kenney（CC0），不包含在这个仓库中。
 
-另一个作品：[《苍灵志》技术作品集](https://github.com/DaliBerr/Lilith-Portfolio)，Unity 6 2D 动作构筑游戏中的法术图校验、通用 UI/事件/存档模块和战斗卡顿排查。
+另一个作品：[《苍灵志》技术作品集](https://github.com/DaliBerr/Lilith-Portfolio)，Unity 6 2D 肉鸽构筑游戏中的法术图校验、通用 UI/事件/存档模块和战斗卡顿排查。
