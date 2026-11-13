@@ -1,0 +1,12 @@
+{
+  "name": "Portfolio.Scribe.EditMode",
+  "references": [
+    "Lonize.Scribe"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

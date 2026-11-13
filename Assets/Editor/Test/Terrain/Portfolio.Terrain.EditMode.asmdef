@@ -1,0 +1,12 @@
+{
+  "name": "Portfolio.Terrain.EditMode",
+  "references": [
+    "Colo.Terrain"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

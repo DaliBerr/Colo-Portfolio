@@ -1,0 +1,31 @@
+# Unity 生成的本机目录
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/UserSettings/
+/MemoryCaptures/
+/Build/
+/Builds/
+/TestResults*.xml
+# 此示例依赖 Unity 的默认项目设置，保留用于选择编辑器的版本文件。
+/ProjectSettings/*
+!/ProjectSettings/ProjectVersion.txt
+*.csproj
+!/Tools/DotnetTests/*.csproj
+!/Tools/SeamFigure/*.csproj
+*.sln
+*.slnx
+*.csproj.user
+.vs/
+.idea/
+.vscode/
+
+# dotnet 测试工程的输出
+/Tools/DotnetTests/bin/
+/Tools/DotnetTests/obj/
+/Tools/DotnetTests/TestResults/
+.DS_Store
+Thumbs.db
+/Tools/SeamFigure/bin/
+/Tools/SeamFigure/obj/

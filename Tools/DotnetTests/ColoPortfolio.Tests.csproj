@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    不打开 Unity 也能跑的测试工程：直接编译 Assets 里的 Scribe 与 Terrain 源码和对应测试。
+    这两个模块不引用 UnityEngine；GridUI 依赖 UGUI，只能在 Unity 里编译。
+    用法（仓库根目录）：dotnet test Tools/DotnetTests
+  -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <RootNamespace>Colo.Portfolio.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../../Assets/Scripts/Scribe/**/*.cs" />
+    <Compile Include="../../Assets/Scripts/Terrain/**/*.cs" />
+    <Compile Include="../../Assets/Editor/Test/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="NUnit" Version="3.14.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+  </ItemGroup>
+</Project>
