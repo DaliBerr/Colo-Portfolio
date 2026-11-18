@@ -1,8 +1,8 @@
 # Colo-3D｜Unity 工厂建造原型 · 源码节选
 
-Colo-3D 是一个用 Unity 6 开发的 3D 工厂建造原型。主要开发时间是 2025 年 12 月到 2026 年春，之后暂停。这个仓库从原型里节选三部分可以单独阅读的代码：存档框架 Scribe、区块地形的无缝法线，以及工厂内部编辑器的网格绘制。游戏本体、美术资源和其余玩法代码不在这里。
+Colo-3D 是一个用 Unity 6 开发的 3D 工厂建造原型。2025 年 11 月从 2D 原型起步，12 月转为 3D，主要开发集中在 2026 年 1 月到 3 月，5 月后暂停。这个仓库从原型里节选三部分可以单独阅读的代码：存档框架 Scribe、区块地形的无缝法线，以及工厂内部编辑器的网格绘制。游戏本体、美术资源和其余玩法代码不在这里。
 
-**我的分工**　Scribe 存档框架由我独立设计并实现。区块法线和网格绘制是我在原型中写的功能。原型的其他部分（工厂物流、电力、世界地图等）有编程 Agent 参与开发，没有收录。整理这个仓库时，地形模块的抽取、全部测试、对比图工具和下文提到的一处修正，都由编程 Agent 协作完成。
+**我的分工**　Scribe 存档框架由我独立设计并实现，区块法线和网格绘制也是我在原型中写的功能；工厂物流、电力等模拟系统由我设计。原型的其余部分没有收录。
 
 [演示视频（3 分 15 秒）](https://github.com/DaliBerr/Colo-Portfolio/releases/tag/demo-video) · [Scribe 源码](Assets/Scripts/Scribe) · [区块法线](Assets/Scripts/Terrain/ChunkNormals.cs) · [网格绘制](Assets/Scripts/GridUI) · [测试](Assets/Editor/Test)
 
@@ -40,6 +40,8 @@ public void ExposeData()
 ![同一片地形、同一个侧光。左：每块只用自己的三角形求法线，区块边界出现折线。右：共享高度场求法线，看不出接缝](Docs/chunk-seam.png)
 
 *4×4 个区块、每块 8×8 格。左图 189 个接缝顶点上，相邻区块法线的最大夹角 45.4°，平均 14.7°；右图为 0°。图和数字都由下方命令生成。*
+
+在游戏里的山地地形上实测，3,549 个区块边界顶点处相邻区块的法线夹角：逐块计算时平均 0.76°、最大 19.1°，改用共享高度场后为 0°。
 
 [ChunkNormals.cs](Assets/Scripts/Terrain/ChunkNormals.cs) 是从游戏 `ChunkMeshGenerator.BuildSeamlessNormals` 抽出的纯 C# 版本，公式逐项一致。原函数依赖 Unity 的 `Mesh` 和游戏的群系噪声，作品集把高度采样抽象成 `IVertexHeightSampler` 接口，测试和出图时用确定性的函数代替。原文件放在 [Reference/ChunkMeshGenerator.cs](Reference/ChunkMeshGenerator.cs)（第 611 行），游戏里保留了 `seamlessNormals` 开关，便于做 A/B 对比。
 
@@ -82,5 +84,7 @@ dotnet run --project Tools/SeamFigure -- Docs/chunk-seam.png
 | `Tools/SeamFigure` | 生成接缝对比图 |
 
 原型演示视频里使用的建筑模型来自 Kenney（CC0），不包含在这个仓库中。
+
+**关于编程 Agent**　开发中使用 Claude Code、Codex 协作，架构设计、任务拆解与评审验收由我负责。原型的物流、电力、世界地图等部分有 Agent 参与实现；整理这个仓库时，地形模块的抽取、全部测试、对比图工具和上文提到的一处修正也由 Agent 协作完成。
 
 另一个作品：[《苍灵志》技术作品集](https://github.com/DaliBerr/Lilith-Portfolio)，Unity 6 2D 肉鸽构筑游戏中的法术图校验、通用 UI/事件/存档模块和战斗卡顿排查。
