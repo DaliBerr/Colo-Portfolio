@@ -4,7 +4,7 @@ Colo-3D 是一个用 Unity 6 开发的 3D 工厂建造原型。2025 年 11 月�
 
 **我的分工**　Scribe 存档框架由我独立设计并实现，区块法线和网格绘制也是我在原型中写的功能；工厂物流、电力等模拟系统由我设计。原型的其余部分没有收录。
 
-[演示视频（3 分 15 秒）](https://github.com/DaliBerr/Colo-Portfolio/releases/tag/demo-video) · [Scribe 源码](Assets/Scripts/Scribe) · [区块法线](Assets/Scripts/Terrain/ChunkNormals.cs) · [网格绘制](Assets/Scripts/GridUI) · [测试](Assets/Editor/Test)
+[演示视频（约 3 分 16 秒）](https://github.com/DaliBerr/Colo-Portfolio/releases/tag/demo-video) · [Scribe 源码](Assets/Scripts/Scribe) · [区块法线](Assets/Scripts/Terrain/ChunkNormals.cs) · [网格绘制](Assets/Scripts/GridUI) · [测试](Assets/Editor/Test)
 
 ## Scribe：按字段读写的存档框架
 
